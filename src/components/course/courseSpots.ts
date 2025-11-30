@@ -26,6 +26,16 @@ import sportBuildImg from '@/assets/images/경암체육관.png';
 import constructBuildImg from '@/assets/images/건설관.png';
 import memorialImg from '@/assets/images/10.16 기념관.png';
 
+export type CourseOperatingHours = {
+  label: string;
+  times: string[];
+};
+
+export type CourseFloor = {
+  title: string;
+  description?: string;
+};
+
 export type CourseSpot = {
   id: string;
   title: string;
@@ -33,6 +43,9 @@ export type CourseSpot = {
   buildingNumber: string;
   badge?: string | null;
   image: string;
+  operatingHours?: CourseOperatingHours[];
+  floors?: CourseFloor[];
+  contact?: string;
 };
 
 const imageMap: Record<string, string> = {
@@ -47,10 +60,30 @@ export const courseSpots: CourseSpot[] = [
     id: 'saebyeok-library',
     title: '새벽벌도서관',
     description:
-      "24시간 운영하는 '새벽 별당' 열람실을 통해 새벽까지 빛나는 도서관",
+      "24시간 운영하는 '새벽 별당' 열람실을 통해 새벽까지 빛나는 도서관. 문화·휴식·학업이 공존하는 복합문화공간.",
     buildingNumber: '420',
     badge: '인기',
     image: imageMap['saebyeok-library'],
+    operatingHours: [
+      {
+        label: '월~금',
+        times: ['09:00~21:00 (학기중)', '09:00~18:00 (방학중)'],
+      },
+      {
+        label: '토',
+        times: ['09:00~13:00'],
+      },
+      {
+        label: '공휴일',
+        times: ['휴관'],
+      },
+    ],
+    floors: [
+      { title: '이노베이션파크', description: '스마트 TV로 DVD·OTT 감상' },
+      { title: '러닝커먼스', description: '카페형 학습 분위기, 대규모 행사' },
+      { title: '오디토리움', description: '영화 감상, 강연회 활용' },
+    ],
+    contact: '051-510-1303',
   },
   {
     id: 'humanities',
@@ -64,46 +97,75 @@ export const courseSpots: CourseSpot[] = [
     id: 'pnu-museum',
     title: '박물관',
     description:
-      '부산·경남의 대표적인 선사 및 고대문화 연구기관으로 문화재 발굴과 상설 전시 진행',
-    buildingNumber: '240',
+      '부산·경남의 대표적인 선사 및 고대문화 연구기관(1964년 개관). 문화재 발굴, 기증, 보존처리, 학술연구, 국제교류, 전시, 교육, 다양한 분야 유물 2만 5천여 점 소장',
+    buildingNumber: '412',
     badge: '인기',
     image: imageMap['pnu-museum'],
+    operatingHours: [
+      { label: '월~토', times: ['10:00~17:00', '전시해설 가능'] },
+      { label: '공휴일', times: ['휴관'] },
+    ],
+    floors: [{ title: '관람료무료' }],
+    contact: '051-510-1836',
   },
   {
     id: 'v-space',
     title: 'V-SPACE',
     description:
-      '부산대 학생 및 시민·초기창업자 등 자신의 아이디어를 기술적으로 구현해, 누구나가 원하는 거의 모든 시제품을 만들어 낼 수 있는 꿈의 공간',
+      '부산대 학생 및 시민·초기창업자 등 자신의 아이디어를 기술적으로 구현해, 누구나가 원하는 거의 모든 시제품을 만들어 낼 수 있는 꿈의 공간. 3D프린터·CNC밀링머신·레이저 조각기·웨어러블 디바이스 제작을 위한 컴퓨터 재봉틀 등 최고의 장비 구축',
     buildingNumber: '303',
     badge: '인기',
     image: imageMap['v-space'],
+    operatingHours: [
+      { label: '월~금', times: ['09:30~11:30', '13:30~17:30'] },
+      {
+        label: '안내',
+        times: [
+          '점심시간 12:00~13:00 전후 30분은 장비 점검/출력물 회수',
+          '원활한 사용을 위해 운영시간을 지켜주세요',
+        ],
+      },
+    ],
+    floors: [{ title: '기계관 2층' }],
+    contact: '051-510-3261',
   },
   {
     id: 'mock-court',
     title: '법학관 모의법정',
     description:
       '실제 법정과 같은 모습 재현. 인터넷, 온라인, 시뮬레이션, 화상회의 등을 통한 모의재판 가능',
-    buildingNumber: '320',
+    buildingNumber: '609',
     badge: '인기',
     image: lawImg,
+    operatingHours: [{ label: '운영', times: ['문의 (051-510-1574)'] }],
+    floors: [{ title: '제 1 법학관 3층' }],
+    contact: '051-510-1574',
   },
   {
     id: 'pharmacy-lab',
     title: '약학관 부속실습약국',
     description:
       '약사 실무 현장에서 필요한 지식과 기술을 배우는 시뮬레이션 약국',
-    buildingNumber: '516',
+    buildingNumber: '503',
     badge: '인기',
     image: phamarcyImg,
+    operatingHours: [{ label: '운영시간', times: ['문의 (051-510-1683)'] }],
+    floors: [{ title: '약학관 3층', description: '실습약국 위치' }],
+    contact: '051-510-1683',
   },
   {
     id: 'geo-museum',
     title: '지질박물관',
     description:
-      '시대별 주요 화석 및 인류의 두개골, 각종 화산 분출물, 특이 암석 등 5백여 점 전시',
-    buildingNumber: '210',
+      '시대별 주요 화석 및 인류의 두개골, 각종 화산 분출물, 특이 암석, 운석, 형광 광물, 다양한 색상과 결정의 광물 등 5백여 점 전시',
+    buildingNumber: '414',
     badge: '인기',
     image: geomuseumImg,
+    operatingHours: [
+      { label: '월~금', times: ['09:30~18:00'] },
+      { label: '토', times: ['사전신청 시 단체방문 가능'] },
+      { label: '공휴일', times: ['휴관'] },
+    ],
   },
   {
     id: 'student-hall-cafeteria',
@@ -119,7 +181,7 @@ export const courseSpots: CourseSpot[] = [
     title: '진리의 뜰',
     description:
       '운죽정과 인문관 사이에 위치한 연못과 잔디 정원으로, 잉어 먹이 주기와 산책을 즐길 수 있는 힐링 스팟.',
-    buildingNumber: '',
+    buildingNumber: '303과 306 사이',
     badge: null,
     image: jinliImg,
   },
@@ -137,7 +199,7 @@ export const courseSpots: CourseSpot[] = [
     title: '조각 공원',
     description:
       '캠퍼스 곳곳의 야외 조형물이 모여 있는 공간으로, 산책하면서 작품을 감상하기 좋은 야외 갤러리.',
-    buildingNumber: '',
+    buildingNumber: '416 앞',
     badge: null,
     image: sculptureparkImg,
   },
@@ -164,7 +226,7 @@ export const courseSpots: CourseSpot[] = [
     title: '예원정',
     description:
       '사회관 인근에 위치해 오랫동안 학생들의 쉼터이자 문화 공간 역할을 해온 부산대의 상징적인 정자.',
-    buildingNumber: '',
+    buildingNumber: '421 앞',
     badge: null,
     image: yewonjeongImg,
   },
@@ -182,7 +244,7 @@ export const courseSpots: CourseSpot[] = [
     title: '시월광장',
     description:
       '넓은 잔디와 계단식 공간이 어우러진 광장으로, 축제·행사와 집회가 자주 열리는 캠퍼스의 상징적 오픈 스페이스.',
-    buildingNumber: '',
+    buildingNumber: '203 옆',
     badge: null,
     image: octsquareImg,
   },
@@ -200,7 +262,7 @@ export const courseSpots: CourseSpot[] = [
     title: '민주 언덕',
     description:
       '부마민주항쟁의 역사를 기억하기 위해 조성된 공간으로, 새벽벌도서관 앞 언덕을 정비해 만든 기념의 장.',
-    buildingNumber: '',
+    buildingNumber: '420 옆',
     badge: null,
     image: demoHillImg,
   },
@@ -209,7 +271,7 @@ export const courseSpots: CourseSpot[] = [
     title: '미리내골',
     description:
       '자연대와 공대 사이를 흐르는 작은 계곡과 산책로 일대의 애칭으로, 사시사철 캠퍼스 분위기를 느낄 수 있는 길.',
-    buildingNumber: '',
+    buildingNumber: '409 옆',
     badge: null,
     image: mirinaeImg,
   },
