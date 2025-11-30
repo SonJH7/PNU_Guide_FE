@@ -15,10 +15,15 @@ export default tseslint.config(
       '*.cjs',
       'prettier.config.cjs',
       'eslint.config.js',
+      '*.config.js',
+      'theme.js.d.ts',
     ],
   },
   js.configs.recommended,
-  ...tseslint.configs.recommendedTypeChecked,
+  ...tseslint.configs.recommendedTypeChecked.map((config) => ({
+    ...config,
+    files: config.files ?? ['**/*.{ts,tsx,mts,cts}'],
+  })),
   {
     files: ['src/**/*.{ts,tsx}'],
     languageOptions: {

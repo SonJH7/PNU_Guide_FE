@@ -10,21 +10,21 @@
 
 ## Table of Contents
 
-1. [개요](https://chatgpt.com/g/g-p-68ca627ac67c8191b887eb9c77684724/c/68d7ea5d-6d48-8329-baa7-7632cd424dca#%EA%B0%9C%EC%9A%94)
-2. [주요 기능](https://chatgpt.com/g/g-p-68ca627ac67c8191b887eb9c77684724/c/68d7ea5d-6d48-8329-baa7-7632cd424dca#%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5)
-3. [기술 스택](https://chatgpt.com/g/g-p-68ca627ac67c8191b887eb9c77684724/c/68d7ea5d-6d48-8329-baa7-7632cd424dca#%EA%B8%B0%EC%88%A0-%EC%8A%A4%ED%83%9D)
-4. [빠른 시작](https://chatgpt.com/g/g-p-68ca627ac67c8191b887eb9c77684724/c/68d7ea5d-6d48-8329-baa7-7632cd424dca#%EB%B9%A0%EB%A5%B8-%EC%8B%9C%EC%9E%91)
-5. [환경변수](https://chatgpt.com/g/g-p-68ca627ac67c8191b887eb9c77684724/c/68d7ea5d-6d48-8329-baa7-7632cd424dca#%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98)
-6. [스크립트](https://chatgpt.com/g/g-p-68ca627ac67c8191b887eb9c77684724/c/68d7ea5d-6d48-8329-baa7-7632cd424dca#%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8)
-7. [폴더 구조](https://chatgpt.com/g/g-p-68ca627ac67c8191b887eb9c77684724/c/68d7ea5d-6d48-8329-baa7-7632cd424dca#%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0)
-8. [코드 규칙(ESLint/Prettier/Husky)](https://chatgpt.com/g/g-p-68ca627ac67c8191b887eb9c77684724/c/68d7ea5d-6d48-8329-baa7-7632cd424dca#%EC%BD%94%EB%93%9C-%EA%B7%9C%EC%B9%99eslintprettierhusky)
-9. [테스트(Vitest/RTL/MSW)](https://chatgpt.com/g/g-p-68ca627ac67c8191b887eb9c77684724/c/68d7ea5d-6d48-8329-baa7-7632cd424dca#%ED%85%8C%EC%8A%A4%ED%8A%B8vitestrtlmsw)
-10. [지도/내비 연동(네이버)](https://chatgpt.com/g/g-p-68ca627ac67c8191b887eb9c77684724/c/68d7ea5d-6d48-8329-baa7-7632cd424dca#%EC%A7%80%EB%8F%84%EB%82%B4%EB%B9%84-%EC%97%B0%EB%8F%99%EB%84%A4%EC%9D%B4%EB%B2%84)
-11. [배포(CI/CD, Vercel)](https://chatgpt.com/g/g-p-68ca627ac67c8191b887eb9c77684724/c/68d7ea5d-6d48-8329-baa7-7632cd424dca#%EB%B0%B0%ED%8F%ACcicd-vercel)
-12. [PWA 계획(후순위)](https://chatgpt.com/g/g-p-68ca627ac67c8191b887eb9c77684724/c/68d7ea5d-6d48-8329-baa7-7632cd424dca#pwa-%EA%B3%84%ED%9A%8D%ED%9B%84%EC%88%9C%EC%9C%84)
-13. [접근성·성능 기준](https://chatgpt.com/g/g-p-68ca627ac67c8191b887eb9c77684724/c/68d7ea5d-6d48-8329-baa7-7632cd424dca#%EC%A0%91%EA%B7%BC%EC%84%B1%EC%84%B1%EB%8A%A5-%EA%B8%B0%EC%A4%80)
-14. [FAQ & Troubleshooting](https://chatgpt.com/g/g-p-68ca627ac67c8191b887eb9c77684724/c/68d7ea5d-6d48-8329-baa7-7632cd424dca#faq--troubleshooting)
-15. [브랜치/PR 규칙](https://chatgpt.com/g/g-p-68ca627ac67c8191b887eb9c77684724/c/68d7ea5d-6d48-8329-baa7-7632cd424dca#%EB%B8%8C%EB%9E%9C%EC%B9%98pr-%EA%B7%9C%EC%B9%99)
+1. [개요]
+2. [주요 기능]
+3. [기술 스택]
+4. [빠른 시작]
+5. [환경변수]
+6. [스크립트]
+7. [폴더 구조]
+8. [코드 규칙(ESLint/Prettier/Husky)]
+9. [테스트(Vitest/RTL/MSW)]
+10. [지도/내비 연동(네이버)]
+11. [배포(CI/CD, Vercel)]
+12. [PWA 계획(후순위)]
+13. [접근성·성능 기준]
+14. [FAQ & Troubleshooting]
+15. [브랜치/PR 규칙]
 
 ---
 
@@ -58,7 +58,7 @@
 - **Data**: @tanstack/react-query, axios
 - **Test**: Vitest, @testing-library/react, jest-dom, MSW
 - **Lint/Format**: ESLint v9(Flat), Prettier, Husky, lint-staged
-- **Deploy**: Vercel (CD), GitHub Actions(테스트/빌드 CI)
+- **Deploy**: Vercel (GitHub 연동 자동 배포), GitHub Actions(테스트/빌드 CI)
 
 아키텍처(요약)
 
@@ -92,31 +92,6 @@ npm run dev
 > ⚠️ Vite 생성 시 보이는 Use rolldown-vite (Experimental)? 질문은 No가 정답입니다.
 >
 > Rolldown은 Rust 기반 실험 번들러로, 아직 플러그인 호환성이 부족합니다.
-
----
-
-## 환경변수
-
-모든 클라이언트 변수는 **`VITE_`** 접두사가 필요합니다.
-
-Vercel에서 Preview/Production을 **분리 설정**하세요.
-
-```
-VITE_NAVER_CLIENT_ID=xxxxxxxx
-VITE_API_BASE=https://api.example.com
-
-```
-
-`src/lib/env.ts` 예시
-
-```tsx
-export const ENV = {
-  NAVER_CLIENT_ID: import.meta.env.VITE_NAVER_CLIENT_ID as string,
-  API_BASE: import.meta.env.VITE_API_BASE as string,
-};
-```
-
-`.gitignore`에 `.env*` 포함 필수.
 
 ---
 
@@ -191,20 +166,70 @@ test('fetch greeting', async () => {
 
 ## 배포(CI/CD, Vercel)
 
-1. **GitHub 연동**: Vercel에서 repo import
-2. Build Command: `npm run build` / Output: `dist/` 자동 인식
-3. SPA 리라이트: 루트에 `vercel.json`
+### 1) Vercel 프로젝트 준비
 
-```json
-{ "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
+1. [Vercel](https://vercel.com/)에서 GitHub 저장소를 Import 합니다.
+2. Framework Preset은 **Vite**, Build Command는 `npm run build`, Output Directory는 `dist`로 자동 인식됩니다.
+3. SPA 라우팅을 위해 다음 내용을 `vercel.json`에 추가합니다.
+
+   ```json
+   { "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
+   ```
+
+4. Preview / Production 환경 변수는 **Project Settings → Environment Variables**에서 분리해서 등록합니다.
+
+### 2) GitHub 연동 & 자동 배포
+
+1. Vercel 프로젝트 **Settings → Git**에서 이 저장소를 연결하면, GitHub App이 **PR 생성 시 Preview**, **`main`에 머지되면 Production**을 자동으로 배포합니다.
+2. 별도 GitHub Actions 배포 파이프라인 없이도 Preview URL이 PR에 자동으로 남고, `main` 브랜치에는 Production 배포가 트리거됩니다.
+3. 포크 PR은 GitHub 보안 정책에 따라 환경 변수 사용이 제한될 수 있으니, 필요하다면 Vercel 프로젝트 **Settings → Git**에서 `Automatically expose Preview Deployments for forked pull requests` 옵션을 확인하세요.
+
+### 3) GitHub Actions CI
+
+- `.github/workflows/ci.yml`
+  - `main`, `develop` 브랜치 대상 **push/PR**에서 린트 · 테스트 · 빌드를 검증합니다.
+
+### 4) 로컬에서 수동 배포 (선택)
+
+```bash
+npm i -g vercel
+vercel login                # 최초 1회
+vercel pull --environment=preview
+vercel build
+vercel deploy --prebuilt    # preview 배포
+vercel deploy --prebuilt --prod  # production 배포
 ```
 
-1. **환경변수**: Vercel → Project Settings → Env(Preview/Production 분리)
-2. **브랜치 전략**
-   - `main` → 프로덕션 URL (자동 배포)
-   - `feat/*` → PR 열면 **자동 Preview URL** 생성 (디자이너/PM 리뷰)
+Preview 배포 URL은 `vercel deploy` 명령 결과 또는 PR 댓글에서 확인할 수 있습니다.
 
-> 필요 시 GitHub Actions로 테스트/빌드 CI를 추가하고, Vercel은 배포만 맡겨도 됩니다.
+### 5) Vercel Speed Insights · Analytics 계측
+
+1. 의존성 설치
+
+   ```bash
+   npm install @vercel/speed-insights @vercel/analytics
+   ```
+
+2. 엔트리 파일(`src/main.tsx`)에서 계측 컴포넌트를 추가합니다.
+
+   ```tsx
+   import { Analytics } from '@vercel/analytics/react';
+   import { SpeedInsights } from '@vercel/speed-insights/react';
+
+   ReactDOM.createRoot(document.getElementById('root')!).render(
+     <React.StrictMode>
+       <RouterProvider router={router} />
+       <Analytics />
+       <SpeedInsights />
+     </React.StrictMode>,
+   );
+   ```
+
+3. 변경 사항을 배포하고, 배포 URL을 방문해 페이지 간을 탐색하면 아래 대시보드에서 메트릭이 수집되기 시작합니다.
+   - **Speed Insights** → Performance (Production/Mobile/Desktop)
+   - **Analytics** → 방문자 수, 페이지 뷰, 체류 시간 등 트래픽 리포트
+
+   데이터가 안 보이면 브라우저 콘텐츠 차단기를 해제한 뒤 다시 새로고침해 주세요.
 
 ---
 
