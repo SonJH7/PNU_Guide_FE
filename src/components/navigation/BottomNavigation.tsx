@@ -83,7 +83,7 @@ const navItems: {
 }[] = [
   { key: 'home', label: '홈', icon: homeIcon, path: '/' },
   { key: 'course', label: '코스', icon: courseIcon, path: '/course' },
-  { key: 'map', label: '지도', icon: mapIcon },
+  { key: 'map', label: '지도', icon: mapIcon, path: '/map' },
   { key: 'stamp', label: '스탬프', icon: stampIcon, path: '/stamp' },
   { key: 'my', label: 'MY', icon: myIcon },
 ];
