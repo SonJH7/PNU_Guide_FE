@@ -225,6 +225,7 @@ const CoursePage: React.FC = () => {
                 type="button"
                 aria-label="검색"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white shadow-[0_2px_8px_rgba(17,24,39,0.08)]"
+                onClick={() => void navigate('/course/search')}
               >
                 <svg
                   width="16"

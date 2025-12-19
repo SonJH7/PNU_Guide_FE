@@ -11,7 +11,7 @@ vi.mock('react-router-dom', () => ({
   useNavigate: () => mockedNavigate,
 }));
 
-const renderNav = (active: 'home' | 'course' | 'map' | 'spot' | 'my') =>
+const renderNav = (active: 'home' | 'course' | 'map' | 'stamp' | 'my') =>
   render(
     <ThemeProvider theme={theme}>
       <BottomNavigation active={active} />
@@ -33,6 +33,13 @@ describe('BottomNavigation', () => {
 
     fireEvent.click(screen.getByRole('button', { name: '코스' }));
     expect(mockedNavigate).toHaveBeenCalledWith('/course');
+  });
+
+  test('스탬프 탭을 누르면 /stamp 경로로 이동한다', () => {
+    renderNav('home');
+
+    fireEvent.click(screen.getByRole('button', { name: '스탬프' }));
+    expect(mockedNavigate).toHaveBeenCalledWith('/stamp');
   });
 
   test('현재 활성 탭을 누르면 이동하지 않는다', () => {

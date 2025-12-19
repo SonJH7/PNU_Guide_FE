@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import chatIcon from '@/assets/icons/ic-chat.svg';
@@ -114,6 +115,8 @@ const ChatFab = styled.button`
 `;
 
 const HomePage: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <Root>
       <MainScroll aria-label="메인 콘텐츠">
@@ -142,7 +145,11 @@ const HomePage: React.FC = () => {
         </TourSectionWrapper>
       </MainScroll>
 
-      <ChatFab type="button" aria-label="챗봇 열기">
+      <ChatFab
+        type="button"
+        aria-label="챗봇 열기"
+        onClick={() => void navigate('/chatbot')}
+      >
         <img src={chatIcon} alt="챗봇" />
         <span>챗봇</span>
       </ChatFab>
