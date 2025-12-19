@@ -11,6 +11,7 @@ import App, { GlobalStyle } from '@/App.tsx';
 import CourseDetailPage from '@/pages/CourseDetailPage';
 import CoursePage from '@/pages/CoursePage';
 import CourseSearchPage from '@/pages/CourseSearchPage';
+import StampPage from '@/pages/StampPage';
 import theme from '@/theme/theme';
 
 const withTheme = (node: React.ReactElement) => (
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
   { path: '/course', element: withTheme(<CoursePage />) },
   { path: '/course/search', element: withTheme(<CourseSearchPage />) },
   { path: '/course/:id', element: withTheme(<CourseDetailPage />) },
+  { path: '/stamp', element: withTheme(<StampPage />) },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
