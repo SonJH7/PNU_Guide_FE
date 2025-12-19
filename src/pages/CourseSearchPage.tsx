@@ -389,14 +389,14 @@ const CourseSearchPage: React.FC = () => {
                   </button>
                 </div>
                 {recentSearches.length > 0 ? (
-                  <div className="flex flex-col" style={{ gap: spacing(3) }}>
+                  <div className="flex flex-col divide-y divide-gray-100">
                     {recentSearches.map((term) => (
                       <div
                         key={term}
-                        className="flex items-center justify-between rounded-none border border-gray-100 bg-white shadow-[0_12px_30px_rgba(17,24,39,0.06)]"
+                        className="flex items-center justify-between"
                         style={{
-                          paddingInline: spacing(3),
-                          paddingBlock: spacing(2.5),
+                          paddingInline: spacing(1),
+                          paddingBlock: spacing(2),
                         }}
                       >
                         <button
@@ -410,7 +410,7 @@ const CourseSearchPage: React.FC = () => {
                         <button
                           type="button"
                           aria-label={`${term} 삭제`}
-                          className="ml-3 flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200"
+                          className="ml-3 flex h-6 w-6 items-center justify-center text-gray-400 transition-colors hover:text-gray-600"
                           onClick={() => removeRecent(term)}
                         >
                           <svg
