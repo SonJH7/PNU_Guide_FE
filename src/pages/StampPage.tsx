@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import bellIcon from '@/assets/icons/ic-bell.svg';
+import bellIcon from '@/assets/icons/ic-blackbell.svg';
 import completeBadge from '@/assets/images/complete.png';
 import stampImage from '@/assets/images/stamp.png';
 import BottomNavigation from '@/components/navigation/BottomNavigation';
@@ -72,8 +72,8 @@ const IconButton = styled.button`
   cursor: pointer;
 
   img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
   }
 `;
