@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import guideIcon from '@/assets/icons/ic-guide.svg';
@@ -90,10 +91,21 @@ const categories: CategoryItem[] = [
 ];
 
 const CategoryGrid: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <Grid>
       {categories.map((item) => (
-        <ItemButton key={item.id} type="button">
+        <ItemButton
+          key={item.id}
+          type="button"
+          aria-label={item.label.replace(/\n/g, ' ')}
+          onClick={() => {
+            if (item.id === 'tour') {
+              void navigate('/campus-tour');
+            }
+          }}
+        >
           <IconWrapper>
             <img src={item.icon} alt="" />
           </IconWrapper>

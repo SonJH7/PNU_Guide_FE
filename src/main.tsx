@@ -8,6 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import '@fontsource/pretendard';
 import '@/index.css';
 import App, { GlobalStyle } from '@/App.tsx';
+import CampusTourPage from '@/pages/CampusTourPage';
 import ChatPage from '@/pages/ChatPage';
 import CourseDetailPage from '@/pages/CourseDetailPage';
 import CoursePage from '@/pages/CoursePage';
@@ -25,6 +26,7 @@ const withTheme = (node: React.ReactElement) => (
 
 const router = createBrowserRouter([
   { path: '/', element: <App /> },
+  { path: '/campus-tour', element: withTheme(<CampusTourPage />) },
   { path: '/course', element: withTheme(<CoursePage />) },
   { path: '/chatbot', element: withTheme(<ChatPage />) },
   { path: '/course/search', element: withTheme(<CourseSearchPage />) },
